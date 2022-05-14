@@ -4,3 +4,5 @@ Repositório com as implementações dos padrões de projeto explorados no Lab "
 - Singleton
 - Strategy/Repository
 - Facade
+
+Foi feito um estudo de caso desse repositório para maior entendimento, foi implementada uma validação simples do cep, pela contagem de caracteres.
