@@ -46,6 +46,7 @@ public class ClienteServiceImpl implements ClienteService {
 		return cliente.get();
 	}
 
+
 	@Override
 	public void inserir(Cliente cliente) {
 		salvarClienteComCep(cliente);
@@ -79,5 +80,5 @@ public class ClienteServiceImpl implements ClienteService {
 		// Inserir Cliente, vinculando o Endereco (novo ou existente).
 		clienteRepository.save(cliente);
 	}
-
+	
 }

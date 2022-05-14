@@ -3,6 +3,8 @@ package one.digitalinnovation.gof.model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import javassist.bytecode.stackmap.BasicBlock.Catch;
+
 /**
  * Os atributos desse modelo foram gerados automaticamente pelo site
  * jsonschema2pojo.org. Para isso, usamos o JSON de retorno da API do ViaCEP.
@@ -31,8 +33,13 @@ public class Endereco {
 		return cep;
 	}
 
-	public void setCep(String cep) {
-		this.cep = cep;
+	public void setCep(String cep) throws InvalidCepException{
+		if(cep.length() == 8){
+			this.cep = cep;
+		}
+		else{
+			throw new InvalidCepException(cep);
+		}
 	}
 
 	public String getLogradouro() {
